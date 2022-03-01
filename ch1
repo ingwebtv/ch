@@ -1,0 +1,32 @@
+
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body style="width: 1060; height: 520; padding: 0px; margin:0px" >
+<script src="https://player.artiyerelmedya.com/jwplayer/jwplayer.js"></script>
+<div id='myElement' style="width: 1060; height: 520">Yukleniyor...</div>
+<script type='text/javascript'>
+  var jwpl=jwplayer("myElement").setup({
+	"key":"CxiEp9wcPg+MFQuaWYSJcSQOQgnsGF3ijWunqwfSSnE=",
+    "type": "hls",
+  	"autostart": "viewable",
+	"stretching": "exactfit",
+	  "width": "1060",
+      "height": "520",
+	  "aspectratio": "16:9",
+    "file": "https://trkvz-live.daioncdn.net/aspor/aspor.m3u8",
+    "image": "http://ingwebtv.22web.org/deneme/player1.png'"
+  });
+jwpl.on('error',function(){location.reload();})
+	
+	$(document).ready(function(){
+		jwplayer().resize(window.innerWidth, window.innerHeight);
+		$(window).on('resize', function(){
+      		jwplayer().resize(window.innerWidth, window.innerHeight);
+		});
+		if(jwplayer().on('fullscreen')){jwplayer().setVolume(70)};
+
+	})
+</script>
